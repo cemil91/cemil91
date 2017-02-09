@@ -20,7 +20,7 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 wss.on('connection', function(ws) {
-  console.log("New connection");
+  ws.send("New connection" +ws);
   ws.on('message', function(message) {
     ws.send("Received: " + message);
   });
