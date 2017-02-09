@@ -1,5 +1,5 @@
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-var port      = process.env.OPENSHIFT_NODEJS_PORT;
+var ipaddress = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var port      = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var WebSocketServer = require('ws').Server
 var http = require('http');
