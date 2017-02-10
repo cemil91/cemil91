@@ -22,6 +22,7 @@ wss = new WebSocketServer({
 CLIENTS=[];
 wss.on('connection', function(ws) {
 CLIENTS.push(ws);
+	console.log(ws);
   ws.on('message', function(message) {
     sendAll(message);
   });
