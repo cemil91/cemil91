@@ -19,19 +19,15 @@ wss = new WebSocketServer({
     server: server,
     autoAcceptConnections: false
 });
-CLIENTS=[];
+
 wss.on('connection', function(ws) {
-CLIENTS.push(ws);
+
 	console.log(ws);
   ws.on('message', function(message) {
-    sendAll(message);
+   
   });
   ws.send("NEW USER JOINED");
 });
-function sendAll (message) {
-    for (var i=0; i<CLIENTS.length; i++) {
-        CLIENTS[i].send("Message: " + message);
-    }
 }
 console.log("Listening to " + ipaddress + ":" + port + "...");
 
