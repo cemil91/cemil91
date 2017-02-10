@@ -22,7 +22,7 @@ wss = new WebSocketServer({
 
 wss.on('connection', function(ws) {
 
-	console.log(ws);
+	console.log(ws.headers);
   ws.on('message', function(message) {
    
   });
