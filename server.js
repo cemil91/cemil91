@@ -31,7 +31,7 @@ wss.on('connection', function(ws) {
     //for (var key in clients) {
       //
 	  if(message == id) clients[clients[id]].send("salam" +message);
-    }
+   // }
   });
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
