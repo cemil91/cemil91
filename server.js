@@ -14,19 +14,28 @@ var server = http.createServer(function(request, response) {
 server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
-
+var clients = {};
 wss = new WebSocketServer({
     server: server,
     autoAcceptConnections: false
 });
 
 wss.on('connection', function(ws) {
-
-	console.log(ws.headers);
+  var id = Math.random();
+  clients[id] = ws;
+  console.log("новое соединение " + id);
+	
   ws.on('message', function(message) {
-   
+       console.log('получено сообщение ' + message);
+
+    for (var key in clients) {
+      clients[key].send(message);
+    }
   });
-  ws.send("NEW USER JOINED");
+  ws.on('close', function() {
+    console.log('соединение закрыто ' + id);
+    delete clients[id];
+  });
 });
 
 console.log("Listening to " + ipaddress + ":" + port + "...");
