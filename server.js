@@ -21,15 +21,16 @@ wss = new WebSocketServer({
 });
 
 wss.on('connection', function(ws) {
-  var id = Math.random();
+  var id = Math.round(Math.random()*50);
   clients[id] = ws;
   console.log("новое соединение " + id);
 	
   ws.on('message', function(message) {
        console.log('получено сообщение ' + message);
 
-    for (var key in clients) {
-      clients[key].send(message);
+    //for (var key in clients) {
+      //
+	  if(message == id) clients[id].send("salam"+message);
     }
   });
   ws.on('close', function() {
