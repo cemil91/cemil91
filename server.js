@@ -28,7 +28,7 @@ wss.on('connection', function(ws) {
   });
   ws.send("NEW USER JOINED");
 });
-}
+
 console.log("Listening to " + ipaddress + ":" + port + "...");
 
 
