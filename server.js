@@ -30,7 +30,8 @@ wss.on('connection', function(ws) {
 
     //for (var key in clients) {
       //
-	 clients[message].send("salam" +message);
+	 //clients[message].send("salam" +message);
+	  ws.send("gedis");
    // }
   });
   ws.on('close', function() {
