@@ -26,7 +26,7 @@ wss.on('connection', function(ws) {
   console.log("новое соединение " + id);
 	ws.send(" "+id);
   ws.on('message', function(message) {
-       //console.log('получено сообщение ' + message);
+       console.log('получено сообщение ' + message);
 
  
 	 clients[message].send("size mesaj");
