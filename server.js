@@ -24,16 +24,16 @@ wss.on('connection', function(ws) {
   var id = Math.round(Math.random()*1000);
   clients[id] = ws;
   console.log("новое соединение " + id);
-	
-  ws.on('message', function(message) {
-       console.log('получено сообщение ' + message);
+	ws.send("sizin  token id: "+id);
+  //ws.on('message', function(message) {
+       //console.log('получено сообщение ' + message);
 
     //for (var key in clients) {
       //
 	 //clients[message].send("salam" +message);
-	  ws.send("sizin  token id: "+id);
+	  //
    // }
-  });
+  //});
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     delete clients[id];
