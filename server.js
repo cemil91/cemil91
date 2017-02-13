@@ -21,7 +21,7 @@ wss = new WebSocketServer({
 });
 
 wss.on('connection', function(ws) {
-  var id = Math.round(Math.random()*50);
+  var id = Math.round(Math.random()*1000);
   clients[id] = ws;
   console.log("новое соединение " + id);
 	
@@ -31,7 +31,7 @@ wss.on('connection', function(ws) {
     //for (var key in clients) {
       //
 	 //clients[message].send("salam" +message);
-	  ws.send("gedis");
+	  ws.send("sizin  token id: "+id);
    // }
   });
   ws.on('close', function() {
