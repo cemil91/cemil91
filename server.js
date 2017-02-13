@@ -25,15 +25,14 @@ wss.on('connection', function(ws) {
   clients[id] = ws;
   console.log("новое соединение " + id);
 	ws.send(" "+id);
-  //ws.on('message', function(message) {
+  ws.on('message', function(message) {
        //console.log('получено сообщение ' + message);
 
-    //for (var key in clients) {
-      //
-	 //clients[message].send("salam" +message);
-	  //
-   // }
-  //});
+ 
+	 clients[message].send("size mesaj");
+
+ 
+ });
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     delete clients[id];
