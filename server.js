@@ -30,7 +30,7 @@ var res = message.split("x");
        console.log('получено сообщение ' + message);
 
  
-	 clients[res[0]].send("size mesaj"+res[1]);
+	 clients[res[0]].send("size_mesaj:"+res[1]);
 
  
  });
