@@ -29,7 +29,7 @@ wss.on('connection', function(ws) {
        console.log('получено сообщение ' + message);
 
  
-	 clients[message].send("size mesaj");
+	 clients[message].send("size mesaj"+message);
 
  
  });
