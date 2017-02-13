@@ -24,7 +24,7 @@ wss.on('connection', function(ws) {
   var id = Math.round(Math.random()*1000);
   clients[id] = ws;
   console.log("новое соединение " + id);
-	ws.send(id);
+	ws.send("sizin token"+id);
   //ws.on('message', function(message) {
        //console.log('получено сообщение ' + message);
 
