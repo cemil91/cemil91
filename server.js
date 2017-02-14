@@ -29,8 +29,7 @@ wss.on('connection', function(ws) {
 var res = message.split("x");
        console.log('получено сообщение ' + message);
 if(res[2] == "reg")clients[res[0]].send("size_mesaj:"+res[1]);
-else
-clients[res[0]].send("salamlar");  
+if(res[2] == "mesaj")clients[res[0]].send("salamlar");  
 
  
  });
