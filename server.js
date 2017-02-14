@@ -28,9 +28,9 @@ wss.on('connection', function(ws) {
   ws.on('message', function(message) {
 var res = message.split("x");
        console.log('получено сообщение ' + message);
-
- 
-	 clients[res[0]].send("size_mesaj:"+res[1]);
+if(res[2] == "reg")clients[res[0]].send("size_mesaj:"+res[1]);
+else
+clients[res[0]].send("salamlar");  
 
  
  });
