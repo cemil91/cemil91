@@ -29,7 +29,7 @@ wss.on('connection', function(ws) {
   ws.on('message', function(message) {
 	  for (var k in clients) 
 	  {
-		 data = data+k; 
+		 if(data != undefined)data = data+k; 
 	  }
 	for (var key in clients)  
 	{
@@ -45,7 +45,7 @@ wss.on('connection', function(ws) {
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     
-	  clients.splice(id, 1)
+	  clients.slice(id, 1)
   });
 });
 
