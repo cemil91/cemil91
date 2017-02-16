@@ -21,34 +21,26 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 
-wss.on('connection', function(ws) {
-  var id = Math.round(Math.random()*1000000000);
-  clients[id] = ws;
-  console.log("новое соединение " + id);
-	ws.send("token:"+id);
-		  for (var k in clients) 
-	  {
-		 data = data+k+":"; 
-	  }
-  ws.on('message', function(message) {
+wss.on('connection', function(ws)
+{
+var id = Math.random();
+clients[id] = ws;
+console.log("Новое соединение " + id);
 
-	for (var key in clients)  
-	{
-		if(clients[key].readyState === clients[key].OPEN)clients[key].send(data.replace("undefined",""));
-	}
-//var res = message.split("x");
-       //console.log('получено сообщение ' + message);
-//if(res[2] == "reg")
-//if(res[2] == "mesaj")clients[res[0]].send(" "+res[1]);  
-
- 
+ws.on('message', function(message) 
+{
+for(var key in clients) 
+{
+clients[key].send(message);
+}
+console.log('Получено сообщение ' + message);
 });
-  ws.on('close', function() {
-    console.log('соединение закрыто ' + id);
-    
-	  delete clients[id];
-	  
-  });
+
+ws.on('close', function() 
+{
+console.log('Соединение закрыто ' + id);
+delete clients[id];
+});
 });
 
 console.log("Listening to " + ipaddress + ":" + port + "...");
