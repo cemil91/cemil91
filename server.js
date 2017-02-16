@@ -26,9 +26,10 @@ wss.on('connection', function(ws) {
   console.log("новое соединение " + id);
 	ws.send("token:"+id);
   ws.on('message', function(message) {
+	  data = JSON.stringify(clients);
 	for (var key in clients)  
 	{
-		clients[key].send(clients);
+		clients[key].send(data);
 	}
 //var res = message.split("x");
        //console.log('получено сообщение ' + message);
