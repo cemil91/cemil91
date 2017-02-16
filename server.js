@@ -29,11 +29,11 @@ wss.on('connection', function(ws) {
   ws.on('message', function(message) {
 	  for (var k in clients) 
 	  {
-		 if(k != undefined)data = data+k; 
+		 data = data+k+":"; 
 	  }
 	for (var key in clients)  
 	{
-		clients[key].send(data);
+		clients[key].send(data.replace("undefined","");
 	}
 //var res = message.split("x");
        //console.log('получено сообщение ' + message);
@@ -45,7 +45,7 @@ wss.on('connection', function(ws) {
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     
-	  clients[id] = "";
+	  delete clients[id];
   });
 });
 
