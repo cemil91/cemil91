@@ -15,7 +15,7 @@ server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
 var data;
-var clients = new Array();
+var clients = {};
 wss = new WebSocketServer({
     server: server,
     autoAcceptConnections: false
@@ -46,7 +46,7 @@ wss.on('connection', function(ws) {
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     
-	  clients.splice((parseInt(id)-1),1);
+	  delete clients.id;
 	  
   });
 });
