@@ -23,7 +23,7 @@ wss = new WebSocketServer({
 
 wss.on('connection', function(ws)
 {
-var id = Math.round(Math.random()*1000);
+var id = Math.round(Math.random()*100000);
 clients[id] = ws;
 console.log("Новое соединение " + id);
 ws.send("token:"+id);	
