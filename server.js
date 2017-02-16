@@ -29,7 +29,7 @@ wss.on('connection', function(ws) {
   ws.on('message', function(message) {
 	  for (var k in clients) 
 	  {
-		 if(data != undefined)data = data+k; 
+		 if(k != undefined)data = data+k; 
 	  }
 	for (var key in clients)  
 	{
