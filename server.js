@@ -33,7 +33,7 @@ wss.on('connection', function(ws) {
 	  }
 	for (var key in clients)  
 	{
-		clients[key].send(data.replace("undefined","");
+		clients[key].send(data.replace("undefined",""));
 	}
 //var res = message.split("x");
        //console.log('получено сообщение ' + message);
