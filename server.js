@@ -40,7 +40,7 @@ wss.on('connection', function(ws) {
        //console.log('получено сообщение ' + message);
 //if(res[2] == "reg")
 //if(res[2] == "mesaj")clients[res[0]].send(" "+res[1]);  
-//
+
  
 });
   ws.on('close', function() {
