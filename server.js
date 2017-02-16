@@ -31,10 +31,9 @@ ws.send("token:"+id);
 	
 for(var k in clients){data += k+":";}
 	
-ws.on('message', function(message) 
-      if(message == "listele"){
-	      
+ws.on('message', function(message) 	      
 {
+ if(message == "listele"){	
 for(var key in clients) 
 {
 	
