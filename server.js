@@ -22,7 +22,7 @@ wss = new WebSocketServer({
 });
 
 wss.on('connection', function(ws) {
-  var id = Math.round(Math.random()*100);
+  var id = Math.round(Math.random()*1000000000);
   clients[id] = ws;
   console.log("новое соединение " + id);
 	ws.send("token:"+id);
@@ -47,7 +47,7 @@ wss.on('connection', function(ws) {
     console.log('соединение закрыто ' + id);
     
 	  delete clients.id;
-	  
+	  data="";
   });
 });
 
