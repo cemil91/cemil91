@@ -26,11 +26,12 @@ wss.on('connection', function(ws) {
   clients[id] = ws;
   console.log("новое соединение " + id);
 	ws.send("token:"+id);
-  ws.on('message', function(message) {
-	  for (var k in clients) 
+		  for (var k in clients) 
 	  {
-		 data = data+k+":"; 
+		 data = data+k; 
 	  }
+  ws.on('message', function(message) {
+
 	for (var key in clients)  
 	{
 		clients[key].send(data.replace("undefined",""));
