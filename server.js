@@ -14,6 +14,7 @@ var server = http.createServer(function(request, response) {
 server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
+var data;
 var clients = {};
 wss = new WebSocketServer({
     server: server,
@@ -26,10 +27,13 @@ wss.on('connection', function(ws) {
   console.log("новое соединение " + id);
 	ws.send("token:"+id);
   ws.on('message', function(message) {
-	  
+	  for (var k in clients) 
+	  {
+		 data = data+k; 
+	  }
 	for (var key in clients)  
 	{
-		clients[key].send(JSON.stringify(clients));
+		clients[key].send(data);
 	}
 //var res = message.split("x");
        //console.log('получено сообщение ' + message);
