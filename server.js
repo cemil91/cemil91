@@ -46,7 +46,7 @@ wss.on('connection', function(ws) {
   ws.on('close', function() {
     console.log('соединение закрыто ' + id);
     
-	  clients.splice(id,1);
+	  clients.splice((id-1),1);
 	  
   });
 });
