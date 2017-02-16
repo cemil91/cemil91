@@ -28,7 +28,7 @@ wss.on('connection', function(ws) {
 	ws.send("token:"+id);
 		  for (var k in clients) 
 	  {
-		 data = data+k; 
+		 data = data+k+":"; 
 	  }
   ws.on('message', function(message) {
 
