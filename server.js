@@ -27,11 +27,7 @@ var id = Math.round(Math.random()*1000);
 clients[id] = ws;
 console.log("Новое соединение " + id);
 	
-	ws.on('close', function() 
-{
-console.log('Соединение закрыто ' + id);
-delete clients[id];
-});
+
 	
 for(var k in clients){data += k+":";}
 	
@@ -45,7 +41,11 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send(data);
 console.log('Получено сообщение ' + message);
 });
 
-
+ws.on('close', function() {
+console.log('Соединение закрыто ' + id);
+delete clients[id];
+	data = "";
+});
 });
 
 console.log("Listening to " + ipaddress + ":" + port + "...");
