@@ -32,6 +32,8 @@ ws.send("token:"+id);
 for(var k in clients){data += k+":";}
 	
 ws.on('message', function(message) 
+      if(message == "listele"){
+	      
 {
 for(var key in clients) 
 {
@@ -39,8 +41,11 @@ for(var key in clients)
 if(clients[key].readyState === clients[key].OPEN)clients[key].send(data);
 }
 console.log('Получено сообщение ' + message);
+                               }
 });
 
+	      
+	              
 ws.on('close', function() {
 console.log('Соединение закрыто ' + id);
 delete clients[id];
