@@ -34,7 +34,7 @@ wss.on('connection', function(ws) {
 
 	for (var key in clients)  
 	{
-		if(ws.readyState === ws.OPEN)clients[key].send(data.replace("undefined",""));
+		if(clients[key].readyState === clients[key].OPEN)clients[key].send(data.replace("undefined",""));
 	}
 //var res = message.split("x");
        //console.log('получено сообщение ' + message);
