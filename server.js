@@ -23,7 +23,7 @@ wss = new WebSocketServer({
 
 wss.on('connection', function(ws)
 {
-var id = Math.random();
+var id = Math.round(Math.random()*1000);
 clients[id] = ws;
 console.log("Новое соединение " + id);
 
@@ -31,7 +31,7 @@ ws.on('message', function(message)
 {
 for(var key in clients) 
 {
-clients[key].send(message);
+if(clients[key].readyState === clients[key].OPEN)clients[key].send(message);
 }
 console.log('Получено сообщение ' + message);
 });
