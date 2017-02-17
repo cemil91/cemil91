@@ -33,6 +33,7 @@ for(var k in clients){data += k+":";}
 	
 ws.on('message', function(message) 	      
 {
+var res = message.split(":");
  if(message == "listele"){	
 for(var key in clients) 
 {
@@ -41,6 +42,16 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 console.log('Получено сообщение ' + message);
                                }
+	
+	
+	 if(res[0] == "teklif"){	
+
+if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("teklif:"+res[2]+"-den teklif");
+
+console.log('Получено сообщение ' + message);
+                               }
+	
+	
 });
 
 	      
