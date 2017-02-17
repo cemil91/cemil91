@@ -27,7 +27,7 @@ var id = Math.round(Math.random()*100000);
 clients[id] = ws;
 console.log("Новое соединение " + id);
 ws.send("token:"+id);	
-
+data = "";
 	
 for(var k in clients){data += k+":";}
 	
@@ -48,7 +48,7 @@ console.log('Получено сообщение ' + message);
 ws.on('close', function() {
 console.log('Соединение закрыто ' + id);
 delete clients[id];
-	data = "";
+	
 });
 });
 
