@@ -48,7 +48,7 @@ console.log('Получено сообщение ' + message);
 ws.on('close', function() {
 console.log('Соединение закрыто ' + id);
 delete clients[id];
-	
+data = "";	
 });
 });
 
