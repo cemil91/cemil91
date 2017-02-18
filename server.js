@@ -46,7 +46,7 @@ console.log('Получено сообщение ' + message);
 	
 	 if(res[0] == "teklif"){	
 
-if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("teklif:"+res[2]+"-den teklif");
+if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("teklif:"+res[2]);
 
 console.log('Получено сообщение ' + message);
                                }
