@@ -58,6 +58,12 @@ if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("qeb
 console.log('Получено сообщение ' + message);
                                }
 	
+	 if(res[0] == "oyna"){	
+
+if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("oyna:"+res[2]);
+
+console.log('Получено сообщение ' + message);
+                               }	
 	
 });
 
