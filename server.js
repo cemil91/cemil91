@@ -15,7 +15,6 @@ server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
 var data;
-var datam;
 var clients = {};
 wss = new WebSocketServer({
     server: server,
@@ -39,7 +38,7 @@ var res = message.split(":");
          if(res[0] == "pong"){	
 console.log('pong'+res[1]);
 		 
-if(datam.indexOf(res[1]) === -1)datam += res[1]+":";
+if(data.indexOf(res[1]) === -1)data += res[1]+":";
 	
 
                                }
@@ -48,7 +47,7 @@ if(datam.indexOf(res[1]) === -1)datam += res[1]+":";
 for(var key in clients) 
 {
 
-if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+datam);
+if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
 console.log('Получено сообщение ' + message);
                                }
