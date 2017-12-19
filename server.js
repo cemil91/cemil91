@@ -37,12 +37,19 @@ var res = message.split(":");
  if(message == "listele"){	
 for(var key in clients) 
 {
-console.log(clients[key]+'||'+clients[key].OPEN);	
+
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
 console.log('Получено сообщение ' + message);
                                }
 	
+	 if(res[0] == "pong"){	
+console.log('pong'+message);
+delete clients[res[1]];
+data = "";
+for(var k in clients){data += k+":";}
+
+                               }
 	
 	 if(res[0] == "teklif"){	
 
@@ -75,6 +82,16 @@ delete clients[id];
 data = "";
 	for(var k in clients){data += k+":";}
 });
+function ping()	{
+	console.log('ping');
+for(var key in clients) 
+{
+
+if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
+}
+                }
+	setInterval(ping(), 5000); 
+	
 });
 
 console.log("Listening to " + ipaddress + ":" + port + "...");
