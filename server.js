@@ -85,15 +85,16 @@ data = "";
 	for(var k in clients){data += k+":";}
 });
 function ping()	{
-	data="";
+	
 	console.log('ping');
 for(var key in clients) 
 {
 
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
-                }
-	setInterval(ping, 10000); 
+               
+data="";}
+	setInterval(ping, 5000); 
 	
 });
 
