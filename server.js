@@ -38,8 +38,7 @@ var res = message.split(":");
           if(res[0] == "pong"){	
 console.log('pong'+res[1]);
 		 
-if(data.indexOf(res[1]) === -1)data += res[1]+":"; else
-{ delete clients[res[1]]; data = ""; for(var k in clients){data += k+":";}  }
+if(data.indexOf(res[1]) === -1)data += res[1]+":";
 	
 
                                }
