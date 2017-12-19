@@ -43,7 +43,8 @@ if(data.indexOf(res[1]) === -1)data += res[1]+":";
 
                                }
 	
- if(message == "listele"){	
+ if(message == "listele"){
+	 ping();
 for(var key in clients) 
 {
 
@@ -86,17 +87,14 @@ data = "";
 	for(var k in clients){data += k+":";}
 });
 function ping()	{
-	
-	console.log('pingg');
+console.log('pingg');
 for(var key in clients) 
 {
+if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
+}
+             
+                }
 
-//if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
-	console.log(key);
-}
-	setTimeout(ping, 5000);                
-}
-ping();
 	
 });
 
