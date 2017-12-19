@@ -90,6 +90,7 @@ function ping()	{
 console.log('pingg');
 for(var key in clients) 
 {
+	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
              
