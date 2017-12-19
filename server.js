@@ -35,13 +35,13 @@ ws.on('message', function(message)
 {
 var res = message.split(":");
 	
-         if(res[0] == "pong"){	
+/*         if(res[0] == "pong"){	
 console.log('pong'+res[1]);
 		 
 if(data.indexOf(res[1]) === -1)data += res[1]+":";
 	
 
-                               }
+                               }*/
 	
  if(message == "listele"){
 	// ping();
@@ -86,14 +86,14 @@ delete clients[id];
 data = "";
 	for(var k in clients){data += k+":";}
 });
-function ping()	{
+/*function ping()	{
 console.log('pingg');
 for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
              
-                }
+                }*/
 
 	
 });
