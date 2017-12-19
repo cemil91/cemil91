@@ -44,10 +44,9 @@ console.log('Получено сообщение ' + message);
                                }
 	
 	 if(res[0] == "pong"){	
-console.log('pong'+message);
-delete clients[res[1]];
-data = "";
-for(var k in clients){data += k+":";}
+console.log('pong'+res[1]);
+
+data += res[1]+":";
 
                                }
 	
@@ -83,6 +82,7 @@ data = "";
 	for(var k in clients){data += k+":";}
 });
 function ping()	{
+	data="";
 	console.log('ping');
 for(var key in clients) 
 {
