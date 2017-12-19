@@ -90,7 +90,7 @@ for(var key in clients)
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
                 }
-	//setInterval(ping(), 5000); 
+	setInterval(ping, 5000); 
 	
 });
 
