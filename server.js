@@ -94,9 +94,9 @@ for(var key in clients)
 //if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 	console.log(key);
 }
-               
+	setTimeout(ping, 5000);                
 }
-	setInterval(ping, 10000); 
+ping();
 	
 });
 
