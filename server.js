@@ -44,7 +44,7 @@ if(data.indexOf(res[1]) === -1)data += res[1]+":";
                                }
 	
  if(message == "listele"){
-	 ping();
+	// ping();
 for(var key in clients) 
 {
 
