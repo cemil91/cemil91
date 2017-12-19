@@ -37,7 +37,7 @@ var res = message.split(":");
  if(message == "listele"){	
 for(var key in clients) 
 {
-	
+console.log(clients[key]+'||'+clients[key].readyState);	
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
 console.log('Получено сообщение ' + message);
