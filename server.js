@@ -87,7 +87,7 @@ data = "";
 });
 function ping()	{
 	
-	console.log('ping');
+	console.log('pingg');
 for(var key in clients) 
 {
 
@@ -96,7 +96,7 @@ for(var key in clients)
 }
                
 }
-	setInterval(ping, 5000); 
+	setInterval(ping, 10000); 
 	
 });
 
