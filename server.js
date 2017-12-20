@@ -112,7 +112,7 @@ const interval = setInterval(function ping() {
     ws.isAlive = false;
     ws.ping('', false, true);
   });
-}, 30000);
+}, 10000);
 console.log("Listening to " + ipaddress + ":" + port + "...");
 
 
