@@ -84,6 +84,21 @@ delete clients[id];
 data = "";
 	for(var k in clients){data += k+":";}
 });
+
+	
+	
+	
+	function listele(){
+	for(var key in clients) 
+{
+if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
+}
+
+}
+
+	
+	
+	
 function ping()	{
 data ="";	
 console.log('pingg');
@@ -92,16 +107,10 @@ for(var key in clients)
 	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
-    if(data != "") listele();         
+    if(data != "") setTimeout(listele,2000);         
                 }
 	setInterval(ping,5000);
-function listele(){
-	for(var key in clients) 
-{
-if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
-}
-//console.log('Получено сообщение ' + message);
-}
+
 	//setInterval(listele,6000);	
 	
 	
