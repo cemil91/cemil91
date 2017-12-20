@@ -15,7 +15,6 @@ server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
 var data;
-var datam;
 var clients = {};
 wss = new WebSocketServer({
     server: server,
@@ -53,21 +52,14 @@ ws.on('message', function(message)
 {
 var res = message.split(":");
 	
-          if(res[0] == "pong"){	
-console.log('pong'+res[1]);
- datam += res[1]+":";	 
-//if(data.indexOf(res[1]) === -1)datam += res[1]+":";
 	
-
-                               }
-	
- /*if(message == "listele"){
+        if(message == "listele"){
 for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
 console.log('Получено сообщение ' + message);
-                               }*/
+                               }
 	
 
 	
@@ -105,33 +97,7 @@ data = "";
 
 	
 	
-	
 
-
-	
-	
-	
-function pingg()	{
-	
-console.log('pingg');
-for(var key in clients) 
-{
-	console.log(key);
-if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
-}       data = datam; datam = "";
-                }
-	setInterval(pingg,5000);
-	
-	
-	function listele(){
-
-	for(var key in clients) 
-{
-if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
-}
-
-}
-	setInterval(listele,5000);	
 	
 	
 	
