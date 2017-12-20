@@ -92,7 +92,7 @@ for(var key in clients)
 	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }
-             
+    if(data != "") listele();         
                 }
 	setInterval(ping,5000);
 function listele(){
@@ -102,7 +102,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 //console.log('Получено сообщение ' + message);
 }
-	setInterval(listele,6000);	
+	//setInterval(listele,6000);	
 	
 	
 	
