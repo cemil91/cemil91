@@ -101,20 +101,20 @@ for(var key in clients)
 {
 	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
-}       data = datam; datam="";
+}       data = datam;
                 }
 	setInterval(ping,5000);
 	
 	
 	function listele(){
-		if(data!=""){
+
 	for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
-}}
+}
 
 }
-	setInterval(listele,5000);	
+	setInterval(listele,7000);	
 	
 	
 	
