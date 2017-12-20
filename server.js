@@ -101,7 +101,7 @@ for(var key in clients)
 {
 	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
-}       data = datam;
+}       data = datam; datam = "";
                 }
 	setInterval(ping,5000);
 	
@@ -114,7 +114,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 
 }
-	setInterval(listele,7000);	
+	setInterval(listele,4000);	
 	
 	
 	
