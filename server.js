@@ -44,8 +44,6 @@ if(data.indexOf(res[1]) === -1)data += res[1]+":";
                                }
 	
  if(message == "listele"){
-data="";
-for(var k in clients){data += k+":";}
 for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
