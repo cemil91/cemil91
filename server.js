@@ -102,7 +102,7 @@ for(var key in clients)
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }       
                 }
-	setInterval(ping,5000);
+	setInterval(ping,10000);
 	
 	
 	function listele(){
@@ -113,7 +113,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }}
 
 }
-	setInterval(listele,6000);	
+	setInterval(listele,5000);	
 	
 	
 	
