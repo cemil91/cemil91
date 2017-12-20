@@ -87,6 +87,7 @@ data = "";
 	for(var k in clients){data += k+":";}
 });
 function ping()	{
+	data = "";
 console.log('pingg');
 for(var key in clients) 
 {
