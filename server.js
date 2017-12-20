@@ -114,7 +114,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 
 }
-	setInterval(listele,4000);	
+	setInterval(listele,5000);	
 	
 	
 	
