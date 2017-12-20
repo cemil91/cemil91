@@ -22,8 +22,25 @@ wss = new WebSocketServer({
     autoAcceptConnections: false
 });
 
+
+
+
+
+function heartbeat() {
+  this.isAlive = true;
+}
+
+
+
+
+
+
+
+
 wss.on('connection', function(ws)
 {
+	  ws.isAlive = true;
+          ws.on('pong', heartbeat);
 var id = Math.round(Math.random()*100000);
 clients[id] = ws;
 console.log("Новое соединение " + id);
@@ -94,7 +111,7 @@ data = "";
 	
 	
 	
-function ping()	{
+function pingg()	{
 	
 console.log('pingg');
 for(var key in clients) 
@@ -103,7 +120,7 @@ for(var key in clients)
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
 }       data = datam; datam = "";
                 }
-	setInterval(ping,5000);
+	setInterval(pingg,5000);
 	
 	
 	function listele(){
@@ -121,6 +138,15 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 	
 });
 
+
+const interval = setInterval(function ping() {
+  wss.clients.forEach(function each(ws) {
+    if (ws.isAlive === false) return ws.terminate();
+
+    ws.isAlive = false;
+    ws.ping('', false, true);
+  });
+}, 30000);
 console.log("Listening to " + ipaddress + ":" + port + "...");
 
 
