@@ -15,7 +15,7 @@ server.listen( port, ipaddress, function() {
     console.log((new Date()) + ' Server is listening on port 8080');
 });
 var data;
-
+var datam;
 var clients = {};
 wss = new WebSocketServer({
     server: server,
@@ -101,7 +101,7 @@ for(var key in clients)
 {
 	console.log(key);
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("ping");
-}       data = datam;
+}       data = datam; datam="";
                 }
 	setInterval(ping,5000);
 	
