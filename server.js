@@ -39,6 +39,8 @@ var myVar;
 
 wss.on('connection', function(ws)
 {
+	clearInterval(myVar);
+	myVar = setInterval(function(){ listele() }, 5000);
 	  ws.isAlive = true;
           ws.on('pong', heartbeat);
 var id = Math.round(Math.random()*100000);
@@ -90,7 +92,7 @@ console.log('Получено сообщение ' + message);
 	      
 	              
 ws.on('close', function() {
-clearInterval(myVar);
+//clearInterval(myVar);
 console.log('Соединение закрыто ' + id);
 delete clients[id];
 data = "";
@@ -112,7 +114,7 @@ console.log('listele');
 	
 	
 });
-myVar = setInterval(function(){ listele() }, 5000);
+
 
 const interval = setInterval(function ping() {
   wss.clients.forEach(function each(ws) {
