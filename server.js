@@ -96,7 +96,7 @@ data = "";
 });
 
 	
-var list;	
+var myVar = setInterval(function(){ listele() }, 10000);	
 function listele(){
 for(var key in clients) 
 {
@@ -104,9 +104,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 console.log('listele');
                 }
-clearInterval(list);
-list = setInterval(listele,10000);
-
+clearInterval(myVar);
 	
 	
 	
