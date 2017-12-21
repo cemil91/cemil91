@@ -36,7 +36,7 @@ function heartbeat() {
 
 
 var myVar;
-myVar = setInterval(function(){ listele() }, 5000);
+
 wss.on('connection', function(ws)
 {
 	  ws.isAlive = true;
@@ -112,7 +112,7 @@ console.log('listele');
 	
 	
 });
-
+myVar = setInterval(function(){ listele() }, 5000);
 
 const interval = setInterval(function ping() {
   wss.clients.forEach(function each(ws) {
