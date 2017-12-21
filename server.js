@@ -102,7 +102,7 @@ for(var key in clients)
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
-
+console.log('listele');
                 }
 	setInterval(listele,5000);
 	
