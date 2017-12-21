@@ -97,7 +97,7 @@ data = "";
 
 	
 	
-function listele{
+function listele(){
 for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
