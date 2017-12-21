@@ -105,7 +105,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 console.log('listele');
                 }
-myVar = setInterval(function(){ listele() }, 10000);
+myVar = setInterval(function(){ listele() }, 5000);
 	
 	
 	
