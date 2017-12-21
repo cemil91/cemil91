@@ -53,13 +53,13 @@ ws.on('message', function(message)
 var res = message.split(":");
 	
 	
- /*       if(message == "listele"){
+       if(message == "listele"){
 for(var key in clients) 
 {
 if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data);
 }
 console.log('Получено сообщение ' + message);
-                               }*/
+                               }
 	
 
 	
