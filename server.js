@@ -89,6 +89,7 @@ console.log('Получено сообщение ' + message);
 	      
 	              
 ws.on('close', function() {
+clearInterval(myVar);
 console.log('Соединение закрыто ' + id);
 delete clients[id];
 data = "";
@@ -111,7 +112,7 @@ myVar = setInterval(function(){ listele() }, 10000);
 	
 });
 
-clearInterval(myVar);
+
 const interval = setInterval(function ping() {
   wss.clients.forEach(function each(ws) {
     if (ws.isAlive === false) return ws.terminate();
