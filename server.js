@@ -36,6 +36,7 @@ function heartbeat() {
 
 
 var myVar;
+myVar = setInterval(function(){ listele() }, 5000);
 wss.on('connection', function(ws)
 {
 	  ws.isAlive = true;
@@ -105,7 +106,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 }
 console.log('listele');
                 }
-myVar = setInterval(function(){ listele() }, 5000);
+
 	
 	
 	
