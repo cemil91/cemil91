@@ -54,12 +54,12 @@ function heartbeat() {
 
 
 
-var myVar;
+//var myVar;
 
 wss.on('connection', function(ws)
 {
-	clearInterval(myVar);
-	myVar = setInterval(function(){ listele() }, 5000);
+//	clearInterval(myVar);
+//	myVar = setInterval(function(){ listele() }, 5000);
 	  ws.isAlive = true;
           ws.on('pong', heartbeat);
 var id = Math.round(Math.random()*100000);
@@ -111,7 +111,7 @@ console.log('Получено сообщение ' + message);
 	      
 	              
 ws.on('close', function() {
-clearInterval(myVar);
+//clearInterval(myVar);
 console.log('Соединение закрыто ' + id);
 delete clients[id];
 data = "";
@@ -119,7 +119,7 @@ data = "";
 });
 
 	
-	
+/*	
 function listele(){
 for(var key in clients) 
 {
@@ -128,7 +128,7 @@ if(clients[key].readyState === clients[key].OPEN)clients[key].send("liste:"+data
 console.log('listele');
                 }
 
-	
+*/	
 	
 	
 	
