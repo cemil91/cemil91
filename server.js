@@ -111,7 +111,7 @@ console.log('Получено сообщение ' + message);
 	      
 	              
 ws.on('close', function() {
-//clearInterval(myVar);
+clearInterval(myVar);
 console.log('Соединение закрыто ' + id);
 delete clients[id];
 data = "";
