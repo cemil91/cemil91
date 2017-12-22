@@ -15,9 +15,10 @@ var con = mysql.createConnection({
 function users(){
 con.connect(function(err) {
 if (err) throw err;
+	console.log("connect");
 con.query("SELECT * FROM users", function (err, result, fields) {
 if (err) throw err;
-return result;
+console.log(result);
 });
 });
                           }
@@ -66,7 +67,7 @@ clients[id] = ws;
 console.log("Новое соединение " + id);
 ws.send("token:"+id);	
 data = "";
-console.log(users());	
+users();	
 for(var k in clients){data += k+":";}
 	
 ws.on('message', function(message) 	      
