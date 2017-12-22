@@ -26,8 +26,7 @@
 
   "dependencies": {
 	  "socket.io" : "0.9.16",
-	  "ws" : "0.4.31",
-	  "mysql": ""
+	  "ws" : "0.4.31"
   },
   "devDependencies": {},
   "bundleDependencies": [],
