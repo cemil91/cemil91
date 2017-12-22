@@ -11,11 +11,11 @@ var con = mysql.createConnection({
   password: "12345",
   database: "ilqar845_oyun"
 });
-
-function users(){
 con.connect(function(err) {
 if (err) throw err;
 	console.log("connect");
+
+function users(){
 con.query("SELECT * FROM users", function (err, result, fields) {
 if (err) throw err;
 console.log(result);
