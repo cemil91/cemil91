@@ -32,5 +32,5 @@
   "bundleDependencies": [],
 
   "private": true,
-  "main": "mysql.js"
+  "main": "server.js"
 }
