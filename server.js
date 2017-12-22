@@ -3,7 +3,7 @@ var port      = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var WebSocketServer = require('ws').Server
 var http = require('http');
-var mysql = require('mysql');
+/*var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: "phpmail.tk",
@@ -21,7 +21,7 @@ con.query("SELECT * FROM users", function (err, result, fields) {
 if (err) throw err;
 console.log(result);
 });
-                          }
+    */                      }
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
@@ -67,7 +67,7 @@ clients[id] = ws;
 console.log("Новое соединение " + id);
 ws.send("token:"+id);	
 data = "";
-users();	
+//users();	
 for(var k in clients){data += k+":";}
 	
 ws.on('message', function(message) 	      
