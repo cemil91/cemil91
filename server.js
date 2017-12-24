@@ -6,10 +6,10 @@ var http = require('http');
 /*var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "phpmail.tk",
-  user: "ilqar845_oyun",
-  password: "12345",
-  database: "ilqar845_oyun"
+  host: "",
+  user: "",
+  password: "",
+  database: ""
 });
 con.connect(function(err) {
 if (err) throw err;
@@ -87,21 +87,21 @@ console.log('Получено сообщение ' + message);
 	
 	 if(res[0] == "teklif"){	
 
-if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("teklif:"+res[2]);
+if(clients[res[1]].readyState === clients[res[1]].OPEN){if(clients[res[2]].readyState === clients[res[2]].OPEN)clients[res[1]].send("teklif:"+res[2]);}
 
 console.log('Получено сообщение ' + message);
                                }
 	
 	 if(res[0] == "qebulolundu"){	
 
-if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("qebulolundu:"+res[2]);
+if(clients[res[1]].readyState === clients[res[1]].OPEN){if(clients[res[2]].readyState === clients[res[2]].OPEN)clients[res[1]].send("qebulolundu:"+res[2]);}
 
 console.log('Получено сообщение ' + message);
                                }
 	
 	 if(res[0] == "oyna"){	
 
-if(clients[res[1]] != undefined){if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("oyna:"+res[2]);}
+if(clients[res[1]] != undefined){if(clients[res[1]].readyState === clients[res[1]].OPEN){if(clients[res[2]].readyState === clients[res[2]].OPEN)clients[res[1]].send("oyna:"+res[2]);}
 
 console.log('Получено сообщение ' + message);
                                }	
