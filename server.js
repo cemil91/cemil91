@@ -94,7 +94,7 @@ console.log('Получено сообщение ' + message);
 	
 	 if(res[0] == "qebulolundu"){	
 
-if(clients[res[1]] != undefined){if(clients[res[1]].readyState === clients[res[1]].OPEN){if(clients[res[2]] != undefined)clients[res[1]].send("qebulolundu:"+res[2]);}}
+if(clients[res[1]] != undefined){if(clients[res[1]].readyState === clients[res[1]].OPEN)clients[res[1]].send("qebulolundu:"+res[2]);}
 
 console.log('Получено сообщение ' + message);
                                }
